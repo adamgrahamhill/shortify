@@ -1,0 +1,16 @@
+<p>Hello</p>
+<%= notice %>
+<%= alert %>
+<%= form_for(@website) do |f| %>
+
+  <div class="field">
+  <%= f.label :url %>
+  <%= f.text_area :url %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+
+<%= link_to 'Shortify Index', websites_path %>

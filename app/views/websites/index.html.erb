@@ -1,0 +1,12 @@
+<h2>Saved Websites</h2>
+
+<% @websites.each do |site| %>
+  <p>
+  <%= link_to "#{site.id}", "/websites/#{site.id}" %>
+  <%= site.url %>
+  <%= link_to 'Delete', site, method: :delete %>
+</p>
+
+<% end %>
+
+<%= link_to 'Shortify Another URL', new_website_path %>
