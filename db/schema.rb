@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724025503) do
+ActiveRecord::Schema.define(version: 20160724153002) do
+
+  create_table "string_urls", force: :cascade do |t|
+    t.string   "url_string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "websites", force: :cascade do |t|
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "string_url_id"
+    t.index ["string_url_id"], name: "index_websites_on_string_url_id"
   end
 
 end

@@ -1,5 +1,3 @@
 class Website < ApplicationRecord
-  def rng_string
-    
-  end
+  has_one :string_url
 end
